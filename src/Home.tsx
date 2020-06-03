@@ -16,11 +16,6 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <Navbar bg="dark" sticky="top" variant="dark" className="justify-content-center navbar-border" style={{ borderBottom: "1px solid #282c34" }}>
-                <Navbar.Brand href="#">
-                    {process.env.REACT_APP_APPLICATION_NAME}
-                </Navbar.Brand>
-            </Navbar>
             <div style={{margin: "5%"}}>
                 <Posts />
             </div>
