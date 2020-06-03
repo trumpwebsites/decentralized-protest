@@ -1,5 +1,7 @@
 # Decentralized Protest
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3c2c5540-33ff-4697-9f5a-ad71a2f95cb6/deploy-status)](https://app.netlify.com/sites/decentralized-protest/deploys)
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/brandonin/decentralized-protest)
 
 The goal of this project is to allow anyone to be able to fork this and quickly spin up a PWA for any protest so that community organizers have a twitter-esque application that is unbounded by the app stores and uncensorable by social media.
