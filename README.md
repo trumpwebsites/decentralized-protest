@@ -1,11 +1,16 @@
+# Decentralized Protest
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/brandonin/decentralized-protest)
+
 The goal of this project is to allow anyone to be able to fork this and quickly spin up a PWA for any protest so that community organizers have a twitter-esque application that is unbounded by the app stores and uncensorable by social media.
 
-The goals of this project including having:
-1) An infinite scrolling timeline.
-2) Push Notifications.
-3) Offline mode that queues messages and adds them to the timeline as you receive a connection
-4) A shareable QR code to quickly share the application.
-5) Easily setup through netlify, lambdas and a database I haven't figure out yet (faunadb or maybe just RDS?).
+Functionality that will be included:
+
+1. An infinite scrolling timeline.
+2. Push Notifications.
+3. Offline mode that queues messages and adds them to the timeline as you receive a connection
+4. A shareable QR code to quickly share the application.
+5. Easily setup through netlify, lambdas and a database I haven't figure out yet (faunadb or maybe just RDS?).
 
 In order to host your own application all you need to do is fork it and connect master to your netlify build.
 
