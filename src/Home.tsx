@@ -1,6 +1,7 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
 import Navbar from 'react-bootstrap/Navbar';
+
+import Posts from './Posts';
 
 const Home: React.FC = () => {
 
@@ -12,13 +13,14 @@ const Home: React.FC = () => {
                 </Navbar.Brand>
             </Navbar>
             <div style={{margin: "5%"}}>
-                <Card bg="dark" text="white">
+                <Posts />
+                {/* <Card bg="dark" text="white">
                     <Card.Body>
                         <Card.Title>
                             Placeholder
                         </Card.Title>
                     </Card.Body>
-                </Card>
+                </Card> */}
             </div>
         </div>
     )
