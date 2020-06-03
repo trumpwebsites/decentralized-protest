@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy } from "react";
 import Card from "react-bootstrap/Card";
 
-import Post, { IPost } from "./Post";
+import { IPost } from "./Post";
+
+const Post = lazy(() => import('./Post'));
 
 const Posts: React.FC = () => {
     const Posts = [
@@ -24,6 +26,26 @@ const Posts: React.FC = () => {
             user: "Brandon In",
             message: "The Revolution Will Not Be Televised.",
             time: 1591156330000,
+        },
+        {
+            user: "Brandon In",
+            message: "The Revolution Will Not Be Televised.",
+            time: 1591154382222,
+        },
+        {
+            user: "Brandon In",
+            message: "The Revolution Will Not Be Televised.",
+            time: 1591147354222,
+        },
+        {
+            user: "Brandon In",
+            message: "The Revolution Will Not Be Televised.",
+            time: 1591136330000,
+        },
+        {
+            user: "Brandon In",
+            message: "The Revolution Will Not Be Televised.",
+            time: 1591126330000,
         },
     ];
 
