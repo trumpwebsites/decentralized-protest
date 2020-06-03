@@ -11,7 +11,7 @@ export interface IQRModal {
 
 const QRModal: React.FC<IQRModal> = ({show, onClose}) => {
     return (
-        <Modal show={true} onHide={onClose}>
+        <Modal show={show} onHide={onClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Share</Modal.Title>
             </Modal.Header>
