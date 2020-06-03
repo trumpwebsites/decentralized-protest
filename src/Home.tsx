@@ -6,7 +6,7 @@ import PWAPrompt from 'react-ios-pwa-prompt'
 import "./Home.css";
 
 const QRModal = lazy(() => import('./QRCode/QRModal'));
-const Posts = lazy(() => import('./Posts'));
+const Posts = lazy(() => import('./Posts/Posts'));
 
 const Home: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
