@@ -1,5 +1,4 @@
 import React, { lazy } from "react";
-import Card from "react-bootstrap/Card";
 
 import { IPost } from "./Post";
 
