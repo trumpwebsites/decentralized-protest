@@ -1,6 +1,8 @@
 import React, { lazy } from "react";
 import Navbar from "react-bootstrap/Navbar";
-import { BsBoxArrowUp } from "react-icons/bs";
+import { FaQrcode } from "react-icons/fa";
+import PWAPrompt from 'react-ios-pwa-prompt'
+
 import "./Home.css";
 
 const Posts = lazy(() => import('./Posts'));
@@ -13,12 +15,13 @@ const Home: React.FC = () => {
                     {process.env.REACT_APP_APPLICATION_NAME}
                 </Navbar.Brand>
             </Navbar>
-            <button type="button" className="btn btn-light btn-circle btn-xl fixed-button">
-                <BsBoxArrowUp width="40px" height="40px" />
-            </button>
             <div style={{margin: "5%"}}>
                 <Posts />
             </div>
+            <button type="button" className="btn btn-light btn-circle btn-xl fixed-button">
+                <FaQrcode width="40px" height="40px" />
+            </button>
+            <PWAPrompt />
         </div>
     )
 };
