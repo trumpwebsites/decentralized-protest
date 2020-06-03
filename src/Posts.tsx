@@ -52,8 +52,8 @@ const Posts: React.FC = () => {
     return (
         <>
             {Posts.map((post: IPost, index) => (
-                <div style={{ marginBottom: "5%" }}>
-                    <Post key={index} {...post} />
+                <div  key={index} style={{ marginBottom: "5%" }}>
+                    <Post {...post} />
                 </div>
             ))}
         </>

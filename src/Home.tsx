@@ -1,13 +1,19 @@
-import React, { lazy } from "react";
+import React, { useState, lazy } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { FaQrcode } from "react-icons/fa";
 import PWAPrompt from 'react-ios-pwa-prompt'
 
 import "./Home.css";
 
+const QRModal = lazy(() => import('./QRCode/QRModal'));
 const Posts = lazy(() => import('./Posts'));
 
 const Home: React.FC = () => {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
+
     return (
         <div>
             <Navbar bg="dark" sticky="top" variant="dark" className="justify-content-center navbar-border" style={{ borderBottom: "1px solid #282c34" }}>
@@ -18,7 +24,7 @@ const Home: React.FC = () => {
             <div style={{margin: "5%"}}>
                 <Posts />
             </div>
-            <button type="button" className="btn btn-light btn-circle btn-xl fixed-button">
+            <button type="button" className="btn btn-light btn-circle btn-xl fixed-button" onClick={handleShow}>
                 <FaQrcode width="40px" height="40px" />
             </button>
             <PWAPrompt
@@ -26,6 +32,7 @@ const Home: React.FC = () => {
                 timesToShow={3}
                 permanentlyHideOnDismiss={false}
             />
+            <QRModal show={showModal} onClose={handleClose} />
         </div>
     )
 };
