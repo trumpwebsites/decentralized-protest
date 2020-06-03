@@ -1,4 +1,4 @@
-import React from "react";
+import React,  { MouseEvent } from "react";
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -7,16 +7,20 @@ import { IPost } from '../Posts/Post';
 
 const Admin: React.FC = () => {
     // Function using fetch to POST to our API endpoint
-    const onCreatePostClick = () => {
+    const onCreatePostClick = (e: MouseEvent) => {
+        e.preventDefault();
         console.log("helllo")
         function createPost(data) {
-            return fetch('/.netlify/functions/post-create', {
-            body: JSON.stringify(data),
-            method: 'POST'
-            }).then(response => {
-                console.log(response)
-            // return response.json()
-            })
+            return fetch('/.netlify/functions/post-read-all').then((response) => {
+                return response.json();
+            })            
+            // return fetch('/.netlify/functions/post-create', {
+            // body: JSON.stringify(data),
+            // method: 'POST'
+            // }).then(response => {
+            //     console.log(response)
+            // // return response.json()
+            // })
         }
         
         // Post data

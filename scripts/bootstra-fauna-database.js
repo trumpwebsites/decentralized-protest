@@ -8,8 +8,8 @@ const q = faunadb.query
 console.log(chalk.cyan('Creating your FaunaDB Database...\n'))
 
 // 1. Check for required enviroment variables
-if (!process.env.FAUNADB_SECRET) {
-  console.log(chalk.yellow('Required FAUNADB_SECRET enviroment variable not found.'))
+if (!process.env.FAUNADB_SERVER_SECRET) {
+  console.log(chalk.yellow('Required FAUNADB_SERVER_SECRET enviroment variable not found.'))
   console.log(`Make sure you have created your Fauna databse with "netlify addons:create fauna"`)
   console.log(`Then run "npm run bootstrap" to setup your database schema`)
   if (insideNetlify) {
@@ -18,8 +18,8 @@ if (!process.env.FAUNADB_SECRET) {
 }
 
 // Has var. Do the thing
-if (process.env.FAUNADB_SECRET) {
-  createFaunaDB(process.env.FAUNADB_SECRET).then(() => {
+if (process.env.FAUNADB_SERVER_SECRET) {
+  createFaunaDB(process.env.FAUNADB_SERVER_SECRET).then(() => {
     console.log('Fauna Database schema has been created')
     console.log('Claim your fauna database with "netlify addons:auth fauna"')
   })
