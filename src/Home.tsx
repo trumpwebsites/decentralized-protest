@@ -14,13 +14,6 @@ const Home: React.FC = () => {
             </Navbar>
             <div style={{margin: "5%"}}>
                 <Posts />
-                {/* <Card bg="dark" text="white">
-                    <Card.Body>
-                        <Card.Title>
-                            Placeholder
-                        </Card.Title>
-                    </Card.Body>
-                </Card> */}
             </div>
         </div>
     )
