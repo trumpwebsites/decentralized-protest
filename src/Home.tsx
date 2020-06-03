@@ -21,7 +21,11 @@ const Home: React.FC = () => {
             <button type="button" className="btn btn-light btn-circle btn-xl fixed-button">
                 <FaQrcode width="40px" height="40px" />
             </button>
-            <PWAPrompt />
+            <PWAPrompt
+                copyBody={`Stay informed by receiving notifications and the most up-to-date information for ${process.env.REACT_APP_APPLICATION_NAME}.`} 
+                timesToShow={3}
+                permanentlyHideOnDismiss={false}
+            />
         </div>
     )
 };
