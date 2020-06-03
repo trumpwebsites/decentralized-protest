@@ -13,11 +13,12 @@ const QRModal: React.FC<IQRModal> = ({show, onClose}) => {
     return (
         <Modal show={show} onHide={onClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Share</Modal.Title>
+                <Modal.Title>Your Community, Informed.</Modal.Title>
             </Modal.Header>
 
             <Modal.Body style={{ justifyContent: 'center' }}>
                 <QRCode />
+                This QR Code allows you to share these notifications with fellow protestors.
             </Modal.Body>
             
             <Modal.Footer>
