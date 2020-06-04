@@ -9,9 +9,9 @@ const Admin: React.FC = () => {
     // Function using fetch to POST to our API endpoint
     const onCreatePostClick = (e: MouseEvent) => {
         e.preventDefault();
-        console.log("helllo")
         function createPost(data) {
-            return fetch('/.netlify/functions/post-read-all').then((response) => {
+            return fetch('/.netlify/functions/post').then((response) => {
+                console.log(response);
                 return response.json();
             })            
             // return fetch('/.netlify/functions/post-create', {
