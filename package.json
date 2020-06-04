@@ -24,10 +24,13 @@
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
+  "devDependencies": {
+    "netlify-cli": "^2.53.0"
+  },
   "scripts": {
-    "bootstrap": "npx netlify dev:exec ./functions/post/create-schema.js",
+    "bootstrap": "netlify dev:exec node ./functions/post/create-schema.js",
     "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
-    "start": "npx netlify dev",
+    "start": "netlify dev",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "build": "react-scripts build",
     "test": "react-scripts test",
