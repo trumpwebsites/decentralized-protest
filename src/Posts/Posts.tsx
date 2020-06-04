@@ -1,56 +1,23 @@
-import React, { lazy } from "react";
-
-import { IPost } from "./Post";
+import React, { lazy, useEffect, useState } from "react";
 
 const Post = lazy(() => import('./Post'));
 
 const Posts: React.FC = () => {
-    const Posts = [
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised. The Revolution Will Not Be Televised. The Revolution Will Not Be Televised.",
-            time: 1591159839000,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591158839000,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591157839000,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591156330000,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591154382222,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591147354222,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591136330000,
-        },
-        {
-            user: "Brandon In",
-            message: "The Revolution Will Not Be Televised.",
-            time: 1591126330000,
-        },
-    ];
+    const [posts, setPosts] = useState([]);
+    
+    // TODO: Figure out either a websocket, pub/sub or service 
+    // long polling mode in order to grab consistent data.
+    useEffect(() => {
+        fetch('/.netlify/functions/post').then((response) => {
+            return response.json();
+        }).then(response => {
+            setPosts(response);
+        })
+    }, [setPosts]);
 
     return (
         <>
-            {Posts.map((post: IPost, index) => (
+            {posts.map(({ data: post }, index) => (
                 <div  key={index} style={{ marginBottom: "5%" }}>
                     <Post {...post} />
                 </div>
