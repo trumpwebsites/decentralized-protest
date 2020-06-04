@@ -25,7 +25,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "bootstrap": "netlify dev:exec ./functions/post/create-schema.js",
+    "bootstrap": "npx netlify dev:exec ./functions/post/create-schema.js",
     "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
     "start": "npx netlify dev",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
