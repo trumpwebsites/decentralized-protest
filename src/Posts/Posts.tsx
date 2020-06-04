@@ -8,11 +8,16 @@ const Posts: React.FC = () => {
     // TODO: Figure out either a websocket, pub/sub or service 
     // long polling mode in order to grab consistent data.
     useEffect(() => {
-        fetch('/.netlify/functions/post').then((response) => {
-            return response.json();
-        }).then(response => {
-            setPosts(response);
-        })
+        const getPosts = async () => {
+            const postsResponse = await fetch('/.netlify/functions/post');
+            const posts = await postsResponse.json();    
+            return setPosts(posts);
+        }
+        try {
+            getPosts();
+        } catch(err) {
+            console.log('there was an error getting posts');
+        }
     }, [setPosts]);
 
     return (
